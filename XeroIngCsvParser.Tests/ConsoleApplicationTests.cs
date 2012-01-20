@@ -1,5 +1,6 @@
 ﻿using System.Diagnostics;
 using NUnit.Framework;
+using XeroIngCsvParser.Constants;
 using XeroIngCsvParser.Tests.Helpers;
 
 namespace XeroIngCsvParser.Tests

@@ -1,7 +1,8 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.IO;
-using CsvHelper.Configuration;
+using XeroIngCsvParser.Classes;
+using XeroIngCsvParser.Constants;
 
 namespace XeroIngCsvParser
 {
@@ -28,29 +29,23 @@ namespace XeroIngCsvParser
             
             return result;
         }
-    }
 
-    public class ParseResult
-    {
-        public ParseResult()
+        public static List<Transaction> ParseOutTransactions(List<IngCsvRecord> result)
         {
-            Records = new List<IngCsvRecord>();
-        }
-        public List<IngCsvRecord> Records { get; private set; }
-        public string Error { get; set; }
-    }
+            var transactions = new List<Transaction>();
+            foreach (var record in result)
+            {
+                var transaction = new Transaction
+                {
+                    Balance = record.Balance.Value,
+                    Amount = record.Credit == null ? record.Credit.Value : record.Debit.Value,
+                    Date = record.Date,
+                    Details = record.Description,
+                };
+                IngCsvDescription.Extract(transaction);
+            }
 
-    public class IngCsvRecord
-    {
-        [CsvField( Index = 0 )]
-        public DateTime Date { get; set; }
-        [CsvField(Index = 1)]
-        public string Description { get; set; }
-        [CsvField(Index = 2)]
-        public double? Debit { get; set; }
-        [CsvField(Index = 3)]
-        public double? Credit { get; set; }
-        [CsvField(Index = 4)]
-        public double? Balance { get; set; }
+            return transactions;
+        }
     }
 }

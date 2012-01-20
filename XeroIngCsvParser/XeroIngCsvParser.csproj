@@ -46,10 +46,15 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Error.cs" />
+    <Compile Include="Constants\Error.cs" />
+    <Compile Include="IngCsvDescription.cs" />
     <Compile Include="IngCsvParser.cs" />
+    <Compile Include="Classes\IngCsvRecord.cs" />
+    <Compile Include="Classes\ParseResult.cs" />
+    <Compile Include="Classes\PaymentType.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Classes\Transaction.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="packages.config" />
