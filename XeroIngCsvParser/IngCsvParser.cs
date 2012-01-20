@@ -38,9 +38,9 @@ namespace XeroIngCsvParser
                 var transaction = new Transaction
                 {
                     Balance = record.Balance.Value,
-                    Amount = record.Credit == null ? record.Credit.Value : record.Debit.Value,
+                    Amount = record.Credit != null ? record.Credit.Value : record.Debit.Value,
                     Date = record.Date,
-                    Details = record.Description,
+                    FullDetails = record.Description,
                 };
                 IngCsvDescription.Extract(transaction);
             }

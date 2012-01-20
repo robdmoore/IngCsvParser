@@ -6,10 +6,11 @@ namespace XeroIngCsvParser.Classes
     {
         public DateTime Date { get; set; }
         public string Payee { get; set; }
+        public string Description { get; set; }
         public double Amount { get; set; }
         public double Balance { get; set; }
-        public string Reference { get; set; }
-        public string Details { get; set; }
+        public string ReferenceNumber { get; set; }
+        public string FullDetails { get; set; }
         public PaymentType PaymentType { get; set; }
     }
 }

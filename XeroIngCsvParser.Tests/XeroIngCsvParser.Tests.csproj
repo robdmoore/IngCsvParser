@@ -55,6 +55,7 @@
   <ItemGroup>
     <Compile Include="ConsoleApplicationTests.cs" />
     <Compile Include="Helpers\TestFile.cs" />
+    <Compile Include="IngCsvDescriptionTests.cs" />
     <Compile Include="IngCsvParserTests.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>

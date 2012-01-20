@@ -15,6 +15,8 @@ namespace XeroIngCsvParser.Classes
         [Description("Deposit")]
         Deposit,
         [Description("BPAY")]
-        BPay
+        BPay,
+        [Description("ING DIRECT")]
+        Fee
     }
 }
