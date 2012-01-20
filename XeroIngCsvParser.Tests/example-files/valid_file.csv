@@ -1,0 +1,6 @@
+﻿Date, Description, Debit, Credit, Balance
+18/01/2012,"Pay Anyone - Description 1 - Transfer to XXX - Receipt 10001 To 999999 999999",-99.90,, 999.99
+19/01/2012,"Cash & Purchase - Some Place - EFTPOS Purchase - Receipt 10000 Date 20/01/2012 Time 11:58 AM Card ************9999",-999.30,, 9999.99
+20/01/2012,"Pay Anyone - Description 2 - Transfer to XXX - Receipt 9999 To 999999 999998",-999.67,, 9999.89
+21/01/2012,"Transfer - To my account 9999 - Internal Transfer - Receipt 9998",,90.00, 127.56
+22/01/2012,"Transfer - To my account 99999 - Internal Transfer - Receipt 9997",-100.00,, 90.56
