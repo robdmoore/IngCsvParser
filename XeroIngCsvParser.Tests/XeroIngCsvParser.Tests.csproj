@@ -66,6 +66,9 @@
     </ProjectReference>
   </ItemGroup>
   <ItemGroup>
+    <None Include="example-files\invalid_file.csv">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
     <None Include="example-files\valid_file.csv">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </None>

@@ -29,5 +29,14 @@ namespace XeroIngCsvParser.Tests
             Assert.That(result.Records, Has.Count.EqualTo(0));
             Assert.That(result.Error, Is.EqualTo(string.Format(Errors.IncorrectFile, "somefile")));
         }
+
+        [Test]
+        public void Give_error_for_invalid_file()
+        {
+            var file = TestFile.Get("example-files\\invalid_file.csv");
+            var result = IngCsvParser.ParseFromCsv(file);
+            Assert.That(result.Records, Has.Count.EqualTo(0));
+            Assert.That(result.Error, Is.EqualTo(string.Format(Errors.InvalidFile, file, "x is not a valid value for DateTime.")));
+        }
     }
 }

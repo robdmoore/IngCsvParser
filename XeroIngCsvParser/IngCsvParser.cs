@@ -23,7 +23,7 @@ namespace XeroIngCsvParser
             }
             catch (Exception e)
             {
-                result.Error = string.Format("Invalid ING CSV file '{0}' given; {1}.", fileName, e.Message);
+                result.Error = string.Format(Errors.InvalidFile, fileName, e.Message);
             }
             
             return result;
