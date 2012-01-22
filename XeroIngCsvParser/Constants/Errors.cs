@@ -2,6 +2,9 @@
 {
     public static class Errors
     {
+        public const string NoReceiptNumber = "Encountered transaction without receipt number: ";
+        public const string InvalidTransaction = "Encountered invalid transaction: ";
+        public const string UnknownPaymentType = "Encountered unknown payment type: ";
         public const string NoBalance = "Encountered record with no balance: ";
         public const string NoCreditOrDebit = "Encountered record with no credit or debit: ";
         public const string NoRecords = "There were no records in the supplied file.";

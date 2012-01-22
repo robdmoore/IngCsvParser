@@ -1,7 +1,7 @@
 ﻿using System;
-using System.Linq;
 using System.Text.RegularExpressions;
 using XeroIngCsvParser.Classes;
+using XeroIngCsvParser.Constants;
 
 namespace XeroIngCsvParser
 {
@@ -21,7 +21,7 @@ namespace XeroIngCsvParser
             }
             catch(Exception e)
             {
-                throw new ApplicationException("Encountered unknown payment type: " + splitOut[0].Trim(), e);
+                throw new ApplicationException(Errors.UnknownPaymentType + splitOut[0].Trim(), e);
             }
             try
             {
@@ -97,14 +97,14 @@ namespace XeroIngCsvParser
             }
             catch(Exception e)
             {
-                throw new ApplicationException("Encountered invalid transaction: " + transaction.FullDetails, e);
+                throw new ApplicationException(Errors.InvalidTransaction + transaction.FullDetails, e);
             }
             // Receipt
             var receiptMatch = ReceiptNumber.Match(transaction.FullDetails);
             if (receiptMatch.Success)
                 transaction.ReferenceNumber = receiptMatch.Groups[1].Value;
             else
-                throw new ApplicationException("Encountered transaction without receipt number: " + transaction.FullDetails);
+                throw new ApplicationException(Errors.NoReceiptNumber + transaction.FullDetails);
         }
     }
 }

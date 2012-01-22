@@ -1,5 +1,7 @@
-﻿using NUnit.Framework;
+﻿using System;
+using NUnit.Framework;
 using XeroIngCsvParser.Classes;
+using XeroIngCsvParser.Constants;
 
 namespace XeroIngCsvParser.Tests
 {
@@ -54,6 +56,46 @@ namespace XeroIngCsvParser.Tests
                 : Is.EqualTo("{PAYEE}").Or.EqualTo("{PAYEE/DESCRIPTION}"), description
             );
             Assert.That(transaction.ReferenceNumber, Is.EqualTo("999"), description);
+        }
+
+        [Test]
+        public void Throw_exception_for_invalid_payment_type()
+        {
+            var transaction = new Transaction { FullDetails = "SomeWeirdPaymentType - Description - Receipt 999" };
+
+            var ex = Assert.Throws<ApplicationException>(() => IngCsvDescription.Extract(transaction));
+
+            Assert.That(ex.Message, Is.EqualTo(Errors.UnknownPaymentType + "SomeWeirdPaymentType"));
+        }
+
+        [Test]
+        public void Throw_exception_for_invalid_number_of_segments_in_the_transaction_details()
+        {
+            var transaction = new Transaction { FullDetails = "Pay Anyone - Description" };
+
+            var ex = Assert.Throws<ApplicationException>(() => IngCsvDescription.Extract(transaction));
+
+            Assert.That(ex.Message, Is.EqualTo(Errors.InvalidTransaction + transaction.FullDetails));
+        }
+        
+        [Test]
+        public void Throw_exception_for_valid_transaction_but_with_no_receipt_number()
+        {
+            var transaction = new Transaction { FullDetails = "Pay Anyone - {DESCRIPTION} - Transfer to {PAYEE} - To {ACCOUNT_NO}" };
+
+            var ex = Assert.Throws<ApplicationException>(() => IngCsvDescription.Extract(transaction));
+
+            Assert.That(ex.Message, Is.EqualTo(Errors.NoReceiptNumber + transaction.FullDetails));
+        }
+
+        [Test]
+        public void Throw_exception_for_valid_transaction_with_non_numeric_receipt_number()
+        {
+            var transaction = new Transaction { FullDetails = "Pay Anyone - {DESCRIPTION} - Transfer to {PAYEE} - Receipt XXX To {ACCOUNT_NO}" };
+
+            var ex = Assert.Throws<ApplicationException>(() => IngCsvDescription.Extract(transaction));
+
+            Assert.That(ex.Message, Is.EqualTo(Errors.NoReceiptNumber + transaction.FullDetails));
         }
     }
 }
