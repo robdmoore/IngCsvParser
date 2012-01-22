@@ -30,6 +30,7 @@ namespace IngCsvParser
                         var fullyParsed = IngCsvParser.ParseOutTransactions(result.Records);
                         var csv = new CsvHelper.CsvHelper(File.OpenWrite("out.csv"));
                         csv.Writer.WriteRecords(fullyParsed);
+                        Console.WriteLine("Success!");
                     }
                     catch(Exception e)
                     {

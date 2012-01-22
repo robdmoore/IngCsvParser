@@ -68,7 +68,7 @@ namespace IngCsvParser.Tests
         public void Output_valid_output_file_for_valid_input_file()
         {
             var result = Run(TestFile.Get("example-files\\valid_file.csv", true));
-            Assert.That(result.StdOut, Is.EqualTo("Press any key to exit...\r\n"));
+            Assert.That(result.StdOut, Is.EqualTo("Success!\r\nPress any key to exit...\r\n"));
             Assert.That(result.StdErr, Is.Empty);
 
             var expectedOutput = File.ReadAllText(TestFile.Get("example-files\\valid_output.csv"));
