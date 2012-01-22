@@ -1,7 +1,7 @@
 ﻿using System;
 using CsvHelper.Configuration;
 
-namespace XeroIngCsvParser.Classes
+namespace IngCsvParser.Classes
 {
     public class IngCsvRecord
     {

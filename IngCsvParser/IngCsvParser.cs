@@ -1,10 +1,10 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.IO;
-using XeroIngCsvParser.Classes;
-using XeroIngCsvParser.Constants;
+using IngCsvParser.Classes;
+using IngCsvParser.Constants;
 
-namespace XeroIngCsvParser
+namespace IngCsvParser
 {
     public class IngCsvParser
     {

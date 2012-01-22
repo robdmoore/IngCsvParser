@@ -1,7 +1,7 @@
 ﻿using System.IO;
 using System.Reflection;
 
-namespace XeroIngCsvParser.Tests.Helpers
+namespace IngCsvParser.Tests.Helpers
 {
     public static class TestFile
     {

@@ -8,8 +8,8 @@
     <ProjectGuid>{865E299F-3DB9-43A1-876F-17EF66BEE7BF}</ProjectGuid>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
-    <RootNamespace>XeroIngCsvParser.Tests</RootNamespace>
-    <AssemblyName>XeroIngCsvParser.Tests</AssemblyName>
+    <RootNamespace>IngCsvParser.Tests</RootNamespace>
+    <AssemblyName>IngCsvParser.Tests</AssemblyName>
     <TargetFrameworkVersion>v4.0</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
   </PropertyGroup>
@@ -64,9 +64,9 @@
   </ItemGroup>
   <ItemGroup />
   <ItemGroup>
-    <ProjectReference Include="..\XeroIngCsvParser\XeroIngCsvParser.csproj">
+    <ProjectReference Include="..\IngCsvParser\IngCsvParser.csproj">
       <Project>{AD491926-6E94-418D-A303-AA56DD6586B2}</Project>
-      <Name>XeroIngCsvParser</Name>
+      <Name>IngCsvParser</Name>
     </ProjectReference>
   </ItemGroup>
   <ItemGroup>
@@ -86,7 +86,7 @@
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <PropertyGroup>
-    <PostBuildEvent>copy "$(SolutionDir)XeroIngCsvParser\bin\$(ConfigurationName)\XeroIngCsvParser.exe" "$(TargetDir)XeroIngCsvParser.exe"</PostBuildEvent>
+    <PostBuildEvent>copy "$(SolutionDir)IngCsvParser\bin\$(ConfigurationName)\IngCsvParser.exe" "$(TargetDir)IngCsvParser.exe"</PostBuildEvent>
   </PropertyGroup>
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
        Other similar extension points exist, see Microsoft.Common.targets.

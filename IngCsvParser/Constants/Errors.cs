@@ -1,4 +1,4 @@
-﻿namespace XeroIngCsvParser.Constants
+﻿namespace IngCsvParser.Constants
 {
     public static class Errors
     {

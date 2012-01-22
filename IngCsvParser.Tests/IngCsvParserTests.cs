@@ -1,11 +1,11 @@
 ﻿using System;
 using FizzWare.NBuilder;
+using IngCsvParser.Classes;
+using IngCsvParser.Constants;
+using IngCsvParser.Tests.Helpers;
 using NUnit.Framework;
-using XeroIngCsvParser.Classes;
-using XeroIngCsvParser.Constants;
-using XeroIngCsvParser.Tests.Helpers;
 
-namespace XeroIngCsvParser.Tests
+namespace IngCsvParser.Tests
 {
     [TestFixture]
     class IngCsvParserShould

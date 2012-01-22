@@ -1,9 +1,15 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 11.00
 # Visual Studio 2010
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "XeroIngCsvParser", "XeroIngCsvParser\XeroIngCsvParser.csproj", "{AD491926-6E94-418D-A303-AA56DD6586B2}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "IngCsvParser", "IngCsvParser\IngCsvParser.csproj", "{AD491926-6E94-418D-A303-AA56DD6586B2}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "XeroIngCsvParser.Tests", "XeroIngCsvParser.Tests\XeroIngCsvParser.Tests.csproj", "{865E299F-3DB9-43A1-876F-17EF66BEE7BF}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "IngCsvParser.Tests", "IngCsvParser.Tests\IngCsvParser.Tests.csproj", "{865E299F-3DB9-43A1-876F-17EF66BEE7BF}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Files", "Solution Files", "{FE558713-A253-4C38-BA38-689467504FA8}"
+	ProjectSection(SolutionItems) = preProject
+		LICENSE = LICENSE
+		README.md = README.md
+	EndProjectSection
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution

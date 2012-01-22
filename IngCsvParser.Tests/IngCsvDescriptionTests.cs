@@ -1,9 +1,9 @@
 ﻿using System;
+using IngCsvParser.Classes;
+using IngCsvParser.Constants;
 using NUnit.Framework;
-using XeroIngCsvParser.Classes;
-using XeroIngCsvParser.Constants;
 
-namespace XeroIngCsvParser.Tests
+namespace IngCsvParser.Tests
 {
     [TestFixture]
     class IngCsvDescriptionShould

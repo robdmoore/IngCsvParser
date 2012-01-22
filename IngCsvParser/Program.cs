@@ -1,8 +1,8 @@
 ﻿using System;
 using System.IO;
-using XeroIngCsvParser.Constants;
+using IngCsvParser.Constants;
 
-namespace XeroIngCsvParser
+namespace IngCsvParser
 {
     class Program
     {

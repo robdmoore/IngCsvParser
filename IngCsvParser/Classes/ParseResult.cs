@@ -1,6 +1,6 @@
 ﻿using System.Collections.Generic;
 
-namespace XeroIngCsvParser.Classes
+namespace IngCsvParser.Classes
 {
     public class ParseResult
     {

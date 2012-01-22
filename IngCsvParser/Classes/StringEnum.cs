@@ -4,7 +4,7 @@ using System;
 using System.Collections;
 using System.ComponentModel;
 
-namespace XeroIngCsvParser.Classes
+namespace IngCsvParser.Classes
 {
     #region Class StringEnum
 

@@ -1,10 +1,10 @@
 ﻿using System.Diagnostics;
 using System.IO;
+using IngCsvParser.Constants;
+using IngCsvParser.Tests.Helpers;
 using NUnit.Framework;
-using XeroIngCsvParser.Constants;
-using XeroIngCsvParser.Tests.Helpers;
 
-namespace XeroIngCsvParser.Tests
+namespace IngCsvParser.Tests
 {
     [TestFixture]
     class ConsoleApplicationShould
@@ -15,7 +15,7 @@ namespace XeroIngCsvParser.Tests
         {
             var result = new CommandResult();
 
-            var info = new ProcessStartInfo(TestFile.Get("XeroIngCsvParser.exe"))
+            var info = new ProcessStartInfo(TestFile.Get("IngCsvParser.exe"))
             {
                 UseShellExecute = false,
                 RedirectStandardOutput = true,

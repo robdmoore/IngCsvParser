@@ -8,8 +8,8 @@
     <ProjectGuid>{AD491926-6E94-418D-A303-AA56DD6586B2}</ProjectGuid>
     <OutputType>Exe</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
-    <RootNamespace>XeroIngCsvParser</RootNamespace>
-    <AssemblyName>XeroIngCsvParser</AssemblyName>
+    <RootNamespace>IngCsvParser</RootNamespace>
+    <AssemblyName>IngCsvParser</AssemblyName>
     <TargetFrameworkVersion>v4.0</TargetFrameworkVersion>
     <TargetFrameworkProfile>Client</TargetFrameworkProfile>
     <FileAlignment>512</FileAlignment>
