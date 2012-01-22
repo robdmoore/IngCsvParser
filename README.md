@@ -49,11 +49,11 @@ Usage with Xero
  5. Click Browse and find the out.csv file, select it and then click the "Import" button
  6. Match up the following (ones marked with (\*) are important, the others are up to your personal preference, but seemed to work well for me):
    * Date -> Date (\*)
-   * Payee -> Select... [i.e. blank]
+   * Payee -> Particulars
    * Description -> Reference
    * Amount -> Amount (\*)
    * Balance -> Select... [i.e. blank]
-   * ReferenceNumber -> Particulars
+   * ReferenceNumber -> Code
    * FullDetails -> Other
    * PaymentType -> Labels [this is nice because it allows you to use labels to distinguish between different types of transactions]
    * PayeeAndDescription -> Payee (\*)
