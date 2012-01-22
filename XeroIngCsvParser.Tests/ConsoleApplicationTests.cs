@@ -10,7 +10,7 @@ namespace XeroIngCsvParser.Tests
     {
         #region Setup
 
-        private CommandResult Run(string arguments)
+        private static CommandResult Run(string arguments)
         {
             var result = new CommandResult();
 
