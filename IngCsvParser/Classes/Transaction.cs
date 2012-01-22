@@ -12,6 +12,7 @@ namespace IngCsvParser.Classes
         public string ReferenceNumber { get; set; }
         public string FullDetails { get; set; }
         public PaymentType PaymentType { get; set; }
-        public string PayeeAndDescription { get { return string.Format("{0} - {1}", Payee, Description); } }
+        // Most Direct Debit transactions seem to have the description as a unique reference number so just use Payee for them
+        public string PayeeAndDescription { get { return PaymentType == PaymentType.DirectDebit ? Payee : string.Format("{0} - {1}", Payee, Description); } }
     }
 }
