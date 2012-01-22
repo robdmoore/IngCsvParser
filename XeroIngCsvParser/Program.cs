@@ -25,9 +25,16 @@ namespace XeroIngCsvParser
                 }
                 else
                 {
-                    var fullyParsed = IngCsvParser.ParseOutTransactions(result.Records);
-                    var csv = new CsvHelper.CsvHelper(File.OpenWrite("out.csv"));
-                    csv.Writer.WriteRecords(fullyParsed);
+                    try
+                    {
+                        var fullyParsed = IngCsvParser.ParseOutTransactions(result.Records);
+                        var csv = new CsvHelper.CsvHelper(File.OpenWrite("out.csv"));
+                        csv.Writer.WriteRecords(fullyParsed);
+                    }
+                    catch(Exception e)
+                    {
+                        Console.Error.WriteLine(e.ToString());
+                    }
                 }
             }
             

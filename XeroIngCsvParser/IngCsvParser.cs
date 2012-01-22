@@ -30,11 +30,19 @@ namespace XeroIngCsvParser
             return result;
         }
 
-        public static List<Transaction> ParseOutTransactions(List<IngCsvRecord> result)
+        public static List<Transaction> ParseOutTransactions(IList<IngCsvRecord> result)
         {
             var transactions = new List<Transaction>();
             foreach (var record in result)
             {
+                if (!record.Balance.HasValue)
+                {
+                    throw new Exception("Encountered record with no balance: " + record.Description);
+                }
+                if (!record.Credit.HasValue && !record.Debit.HasValue)
+                {
+                    throw new Exception("Encountered record with no credit or debit: " + record.Description);
+                }
                 var transaction = new Transaction
                 {
                     Balance = record.Balance.Value,
