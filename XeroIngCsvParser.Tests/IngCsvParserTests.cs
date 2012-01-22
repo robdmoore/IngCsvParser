@@ -61,5 +61,31 @@ namespace XeroIngCsvParser.Tests
             Assert.That(transaction, Has.Property("Date").EqualTo(csvRecords[0].Date));
             Assert.That(transaction, Has.Property("FullDetails").EqualTo(csvRecords[0].Description));
         }
+
+        [Test]
+        public void Throw_exception_for_record_without_balance()
+        {
+            var csvRecords = Builder<IngCsvRecord>.CreateListOfSize(1)
+                .All().With(r => r.Description = "ING DIRECT - {DESCRIPTION} - Receipt 999")
+                .TheFirst(1).With(r => r.Balance = null)
+                .Build();
+
+            var ex = Assert.Throws<ApplicationException>(() => IngCsvParser.ParseOutTransactions(csvRecords));
+
+            Assert.That(ex.Message, Is.EqualTo(Errors.NoBalance + csvRecords[0].Description));
+        }
+
+        [Test]
+        public void Throw_exception_for_record_without_credit_or_debit()
+        {
+            var csvRecords = Builder<IngCsvRecord>.CreateListOfSize(1)
+                .All().With(r => r.Description = "ING DIRECT - {DESCRIPTION} - Receipt 999")
+                .TheFirst(1).With(r => r.Credit = null).And(r => r.Debit = null)
+                .Build();
+
+            var ex = Assert.Throws<ApplicationException>(() => IngCsvParser.ParseOutTransactions(csvRecords));
+
+            Assert.That(ex.Message, Is.EqualTo(Errors.NoCreditOrDebit + csvRecords[0].Description));
+        }
     }
 }

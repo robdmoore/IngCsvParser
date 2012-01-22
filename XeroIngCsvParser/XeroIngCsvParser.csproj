@@ -47,7 +47,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Classes\StringEnum.cs" />
-    <Compile Include="Constants\Error.cs" />
+    <Compile Include="Constants\Errors.cs" />
     <Compile Include="IngCsvDescription.cs" />
     <Compile Include="IngCsvParser.cs" />
     <Compile Include="Classes\IngCsvRecord.cs" />

@@ -37,11 +37,11 @@ namespace XeroIngCsvParser
             {
                 if (!record.Balance.HasValue)
                 {
-                    throw new Exception("Encountered record with no balance: " + record.Description);
+                    throw new ApplicationException(Errors.NoBalance + record.Description);
                 }
                 if (!record.Credit.HasValue && !record.Debit.HasValue)
                 {
-                    throw new Exception("Encountered record with no credit or debit: " + record.Description);
+                    throw new ApplicationException(Errors.NoCreditOrDebit + record.Description);
                 }
                 var transaction = new Transaction
                 {
