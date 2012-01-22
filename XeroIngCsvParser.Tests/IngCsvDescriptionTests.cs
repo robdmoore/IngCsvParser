@@ -13,7 +13,7 @@ namespace XeroIngCsvParser.Tests
                 "BPAY - {DESCRIPTION} - BPAY Bill Payment - Receipt 999  To {PAYEE}",
                 "Deposit - {DESCRIPTION} - {DESCRIPTION} Deposit - Receipt 999 {PAYEE}",
                 "Deposit - {PAYEE}         {DESCRIPTION} - Receipt 999",
-                "Deposit - {PAYEE} {DESCRIPTION} - Receipt 999",
+                "Deposit - {PAYEE/DESCRIPTION} - Receipt 999",
                 "Direct Debit - {PAYEE} - Direct Debit - Receipt 999  {DESCRIPTION}",
                 "Transfer - To my account {PAYEE} - {DESCRIPTION} - Receipt 999",
                 "Transfer - {DESCRIPTION} - Internal Transfer - Receipt 999  {PAYEE}",
@@ -47,11 +47,11 @@ namespace XeroIngCsvParser.Tests
             Assert.That(transaction.PaymentType, Is.EqualTo(expectedPaymentType), description);
             Assert.That(transaction.Description, expectedPaymentType == PaymentType.CashAndPurchase && description.Contains("ATM")
                 ? Is.EqualTo("ATM Withdrawal")
-                : Is.EqualTo("{DESCRIPTION}").Or.EqualTo("{PAYEE} {DESCRIPTION}")
+                : Is.EqualTo("{DESCRIPTION}").Or.EqualTo("{PAYEE/DESCRIPTION}")
             );
             Assert.That(transaction.Payee, expectedPaymentType == PaymentType.Fee
                 ? Is.EqualTo("ING Direct")
-                : Is.EqualTo("{PAYEE}").Or.EqualTo("{PAYEE} {DESCRIPTION}"), description
+                : Is.EqualTo("{PAYEE}").Or.EqualTo("{PAYEE/DESCRIPTION}"), description
             );
             Assert.That(transaction.ReferenceNumber, Is.EqualTo("999"), description);
         }
