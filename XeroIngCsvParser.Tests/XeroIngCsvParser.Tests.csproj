@@ -70,10 +70,16 @@
     </ProjectReference>
   </ItemGroup>
   <ItemGroup>
+    <None Include="example-files\no_receipt_no.csv">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
     <None Include="example-files\invalid_file.csv">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </None>
     <None Include="example-files\valid_file.csv">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Include="example-files\valid_output.csv">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </None>
     <None Include="packages.config" />

@@ -1,4 +1,5 @@
 ﻿using System.Diagnostics;
+using System.IO;
 using NUnit.Framework;
 using XeroIngCsvParser.Constants;
 using XeroIngCsvParser.Tests.Helpers;
@@ -54,8 +55,25 @@ namespace XeroIngCsvParser.Tests
             Assert.That(result.StdOut, Is.EqualTo("Press any key to exit...\r\n"));
             Assert.That(result.StdErr, Is.EqualTo(Errors.IncorrectArguments + "\r\n"));
         }
+
+        [Test]
+        public void Display_error_for_uncaught_exception()
+        {
+            var result = Run(TestFile.Get("example-files\\no_receipt_no.csv", true));
+            Assert.That(result.StdOut, Is.EqualTo("Press any key to exit...\r\n"));
+            Assert.That(result.StdErr, Is.Not.Empty.And.Contains("Encountered transaction without receipt number"));
+        }
+
+        [Test]
+        public void Output_valid_output_file_for_valid_input_file()
+        {
+            var result = Run(TestFile.Get("example-files\\valid_file.csv", true));
+            Assert.That(result.StdOut, Is.EqualTo("Press any key to exit...\r\n"));
+            Assert.That(result.StdErr, Is.Empty);
+
+            var expectedOutput = File.ReadAllText(TestFile.Get("example-files\\valid_output.csv"));
+            var actualOutput = File.ReadAllText(TestFile.Get("out.csv"));
+            Assert.That(actualOutput, Is.EqualTo(expectedOutput));
+        }
     }
-
-
-    
 }
