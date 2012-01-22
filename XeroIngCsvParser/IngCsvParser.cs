@@ -43,6 +43,7 @@ namespace XeroIngCsvParser
                     FullDetails = record.Description,
                 };
                 IngCsvDescription.Extract(transaction);
+                transactions.Add(transaction);
             }
 
             return transactions;

@@ -1,4 +1,5 @@
 ﻿using System;
+using System.IO;
 using XeroIngCsvParser.Constants;
 
 namespace XeroIngCsvParser
@@ -25,6 +26,8 @@ namespace XeroIngCsvParser
                 else
                 {
                     var fullyParsed = IngCsvParser.ParseOutTransactions(result.Records);
+                    var csv = new CsvHelper.CsvHelper(File.OpenWrite("out.csv"));
+                    csv.Writer.WriteRecords(fullyParsed);
                 }
             }
             
