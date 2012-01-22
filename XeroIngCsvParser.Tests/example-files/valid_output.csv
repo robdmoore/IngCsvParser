@@ -1,6 +1,6 @@
-Date,Payee,Description,Amount,Balance,ReferenceNumber,FullDetails,PaymentType
-18/01/2012,XXX,Description 1,-99.9,999.99,10001,Pay Anyone - Description 1 - Transfer to XXX - Receipt 10001 To 999999 999999,PayAnyone
-19/01/2012,Some Place,EFTPOS Purchase,-999.3,9999.99,10000,Cash & Purchase - Some Place - EFTPOS Purchase - Receipt 10000 Date 20/01/2012 Time 11:58 AM Card ************9999,CashAndPurchase
-20/01/2012,XXX,Description 2,-999.67,9999.89,9999,Pay Anyone - Description 2 - Transfer to XXX - Receipt 9999 To 999999 999998,PayAnyone
-21/01/2012,9999,Internal Transfer,90,127.56,9998,Transfer - To my account 9999 - Internal Transfer - Receipt 9998,InternalTransfer
-22/01/2012,99999,Internal Transfer,-100,90.56,9997,Transfer - To my account 99999 - Internal Transfer - Receipt 9997,InternalTransfer
+Date,Payee,Description,Amount,Balance,ReferenceNumber,FullDetails,PaymentType,PayeeAndDescription
+18/01/2012,XXX,Description 1,-99.9,999.99,10001,Pay Anyone - Description 1 - Transfer to XXX - Receipt 10001 To 999999 999999,PayAnyone,XXX - Description 1
+19/01/2012,Some Place,EFTPOS Purchase,-999.3,9999.99,10000,Cash & Purchase - Some Place - EFTPOS Purchase - Receipt 10000 Date 20/01/2012 Time 11:58 AM Card ************9999,CashAndPurchase,Some Place - EFTPOS Purchase
+20/01/2012,XXX,Description 2,-999.67,9999.89,9999,Pay Anyone - Description 2 - Transfer to XXX - Receipt 9999 To 999999 999998,PayAnyone,XXX - Description 2
+21/01/2012,9999,Internal Transfer,90,127.56,9998,Transfer - To my account 9999 - Internal Transfer - Receipt 9998,InternalTransfer,9999 - Internal Transfer
+22/01/2012,99999,Internal Transfer,-100,90.56,9997,Transfer - To my account 99999 - Internal Transfer - Receipt 9997,InternalTransfer,99999 - Internal Transfer

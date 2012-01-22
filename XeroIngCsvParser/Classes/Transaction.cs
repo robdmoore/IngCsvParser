@@ -12,5 +12,6 @@ namespace XeroIngCsvParser.Classes
         public string ReferenceNumber { get; set; }
         public string FullDetails { get; set; }
         public PaymentType PaymentType { get; set; }
+        public string PayeeAndDescription { get { return string.Format("{0} - {1}", Payee, Description); } }
     }
 }
