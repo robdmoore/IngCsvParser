@@ -35,7 +35,7 @@ Usage
 -----
 
  1. (Optionally) Download the source and build the executable using Visual Studio 2010 and .NET 4
- 2. Get the IngCsvParser.exe file (in bin/Debug, or bin/Release) and the CsvHelper.dll file (in the same folder) and put them on your computer somewhere
+ 2. Get the [IngCsvParser.exe](https://github.com/robdmoore/IngCsvParser/blob/master/IngCsvParser/bin/Debug/IngCsvParser.exe?raw=true) file (in bin/Debug, or bin/Release) and the [CsvHelper.dll](https://github.com/robdmoore/IngCsvParser/blob/master/IngCsvParser/bin/Debug/CsvHelper.dll?raw=true) file (in the same folder) and put them on your computer somewhere
  3. Drag your .csv file exported from the ING Direct Internet Banking portal onto the IngCsvParser.exe file
  4. A new file should be created called out.csv that contains the result
 
